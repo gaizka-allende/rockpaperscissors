@@ -5,9 +5,9 @@ export const START_GAME = 'startGame';
 export const DRAW = 'draw';
 export const FINISH_DRAW = 'finishDraw';
 
-export const startGame = payload => ({
+export const startGame = ({gameType}) => ({
     type: START_GAME,
-    payload
+    payload: {gameType}
 });
 
 export const draw = ({playerId, draw}) => dispatch => {
