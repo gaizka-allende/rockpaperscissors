@@ -4,6 +4,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const APP_DIR = path.resolve(__dirname, 'src/js');
+
 module.exports = {
 	cache: true,
 	context: process.cwd(),
@@ -19,7 +21,7 @@ module.exports = {
 		extensions: ['.js']
 	},
 	entry: {
-		'main': './src/js/main.js'
+		'main': APP_DIR + '/main.js'
 	},
 	output: {
 		path: path.join(process.cwd(), 'build'),
@@ -38,6 +40,13 @@ module.exports = {
 		})
 	],
 	module: {
+        loaders : [
+          {
+            test : /\.jsx?/,
+            include : APP_DIR,
+            loader : 'babel'
+          }
+        ],
 		rules: [{
 			enforce: 'pre',
 			test: /\.js$/,

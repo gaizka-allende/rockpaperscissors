@@ -9,10 +9,12 @@
 		"ecmaVersion": 6,
 		"sourceType": "module",
 		"ecmaFeatures": {
-			"experimentalObjectRestSpread": true
+			"experimentalObjectRestSpread": true,
+            "jsx": true
 		}
 	},
 	"rules": {
 		"no-console": 0
-	}
+	},
+    "plugins": ["react", "jsx"]
 }
